@@ -1643,7 +1643,7 @@ url("./fonts/bootstrap-icons.woff?e34853135f9e39acf64315236852cd5a") format("wof
 .bi-filetype-raw::before { content: "\f75d"; }
 .bi-filetype-rb::before { content: "\f75e"; }
 .bi-filetype-sass::before { content: "\f75f"; }
-.bi-filetype-scss::before { content: "\f760"; }
+.bi-filetype-css::before { content: "\f760"; }
 .bi-filetype-sh::before { content: "\f761"; }
 .bi-filetype-svg::before { content: "\f762"; }
 .bi-filetype-tiff::before { content: "\f763"; }
