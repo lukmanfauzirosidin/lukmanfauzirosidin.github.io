@@ -181,13 +181,26 @@
                 <div class="date-client">
                   <div class="meta-item">
                     <i class="bi bi-calendar-check"></i>
+                    <span id="last-updated"></span>
+                  </div>
+                  <script>
+                    const lastModified = new Date(document.lastModified);
+
+                    const options = { year: 'numeric', month: 'long' };
+                    const formattedDate = lastModified.toLocaleDateString('id-ID', options);
+
+                    document.getElementById("last-updated").textContent = formattedDate;
+                  </script>
+                <!-- <div class="date-client">
+                  <div class="meta-item">
+                    <i class="bi bi-calendar-check"></i>
                     <span>September 2024</span>
                   </div>
-                  <!-- <div class="meta-item">
+                  <div class="meta-item">
                     <i class="bi bi-buildings"></i>
                     <span>DigitalCraft Solutions</span>
-                  </div> -->
-                </div>
+                  </div>
+                </div> -->
               </div>
 
               <h2 class="project-title">Implementaion ERP Odoo</h2>
