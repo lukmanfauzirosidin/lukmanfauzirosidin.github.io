@@ -141,42 +141,70 @@
           </div>
 
           <div class="col-lg-7">
-            <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
-              <h3>Get In Touch</h3>
-              <!-- <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis.</p> -->
+          <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
+            <h3>Get In Touch</h3>
+            
+            <!-- Tambahkan id="contact-form" di sini -->
+            <form id="contact-form" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
 
-              <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-                <div class="row gy-4">
-
-                  <div class="col-md-6">
-                    <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                  </div>
-
-                  <div class="col-md-6 ">
-                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                  </div>
-
-                  <div class="col-12">
-                    <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                  </div>
-
-                  <div class="col-12">
-                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                  </div>
-
-                  <div class="col-12 text-center">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                    <button type="submit" class="btn">Send Message</button>
-                  </div>
-
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
                 </div>
-              </form>
 
-            </div>
+                <div class="col-md-6">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                </div>
+
+                <div class="col-md-6">
+                  <input type="tel" class="form-control" name="phone" placeholder="Your Phone (Optional)">
+                </div>
+
+                <div class="col-md-6">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                </div>
+
+                <div class="col-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                </div>
+
+                <div class="col-12 text-center">
+                  <button type="submit" class="btn">Send via WhatsApp</button>
+                </div>
+
+              </div>
+            </form>
+
+            <script>
+              document.getElementById("contact-form").addEventListener("submit", function(e) {
+                e.preventDefault();
+
+                const name = this.name.value;
+                const email = this.email.value;
+                const phone = this.phone.value || "-";
+                const subject = this.subject.value;
+                const message = this.message.value;
+
+                const phoneNumber = "6285314228339"; // Ganti dengan nomor WhatsApp Anda
+
+                const waText = `Halo, saya ingin terhubung lebih lanjut.
+
+        Nama: ${name}
+        Email: ${email}
+        Telepon: ${phone}
+
+        Topik: ${subject}
+
+        Pesan: ${message}`;
+
+                const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(waText)}`;
+
+                window.open(waUrl, "_blank");
+              });
+            </script>
+
           </div>
+        </div>
 
         </div>
 
